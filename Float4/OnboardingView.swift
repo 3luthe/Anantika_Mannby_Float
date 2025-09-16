@@ -137,19 +137,6 @@ struct OnboardingView: View {
                     }
                     .padding(.horizontal, 24)
                     .tag(4)
-
-                    VStack(spacing: 16) {
-                        Spacer()
-                        Text("preview")
-                            .font(.title.bold())
-                            .foregroundStyle(FlowTheme.textPrimary)
-
-                        previewPanel
-
-                        Spacer()
-                    }
-                    .padding(.horizontal, 24)
-                    .tag(5)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.easeInOut(duration: 0.3), value: selection)
@@ -198,7 +185,7 @@ struct OnboardingView: View {
             } else {
                 Button {
                     withAnimation(.easeInOut(duration: 0.3)) { 
-                        selection = 5 
+                        selection = 4 
                     }
                 } label: {
                     Text("skip")
@@ -220,8 +207,8 @@ struct OnboardingView: View {
 
     private func primaryTitle(for index: Int) -> String {
         switch index {
-        case 0: return "let’s begin"
-        case 1, 2, 3, 4: return "next"
+        case 0: return "let's begin"
+        case 1, 2, 3: return "next"
         default: return "enter float"
         }
     }
@@ -245,7 +232,7 @@ struct OnboardingView: View {
     }
 
     private func handlePrimary() {
-        if selection < 5 {
+        if selection < 4 {
             withAnimation(.easeInOut(duration: 0.3)) { 
                 selection += 1 
             }
@@ -301,23 +288,6 @@ struct OnboardingView: View {
                 .fill(FlowTheme.surface)
         )
     }
-
-    private var previewPanel: some View {
-        VStack(spacing: 12) {
-            ZStack {
-                FlowTheme.backgroundGradient(for: selectedMood, intensity: moodIntensity)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                // Mock bubble sprite
-                Circle()
-                    .fill(Color.white.opacity(0.6))
-                    .frame(width: 60, height: 60)
-                    .shadow(radius: 10, y: 6)
-            }
-            .frame(height: 180)
-        }
-        .flowCard()
-    }
-
 }
 
 #Preview {

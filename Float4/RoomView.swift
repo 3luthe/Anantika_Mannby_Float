@@ -54,9 +54,9 @@ struct RoomView: View {
                         ZStack {
                             Button { } label: {
                                 ZStack {
-                                    Circle()
-                                        .fill(.regularMaterial)
-                                        .opacity(isPressing ? 0.95 : 1.0)
+                                    Image("bubble")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
                                         .frame(width: 200, height: 200)
                                     Text(isExhaling ? "Exhale" : (isPressing ? "Inhale" : "Hold to inhale"))
                                         .font(.title3.weight(.semibold))
