@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Bubble_Sphere_PNG_Transparent_Image.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Bubble_Sphere_PNG_Transparent_Image 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Bubble_Sphere_PNG_Transparent_Image 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
